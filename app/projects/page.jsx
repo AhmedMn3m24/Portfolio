@@ -28,7 +28,7 @@ const projects = [
     live: "https://ahmedmn3m24.github.io/Weather_project/",
     github: "https://github.com/AhmedMn3m24/Weather_project",
     featured: false,
-    number: "05",
+    number: "03",
     img: "../../public/asstes/weather.png",
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     live: "https://ahmedmn3m24.github.io/Mealfiy_project/",
     github: "https://ahmedmn3m24.github.io/Mealfiy_project/",
     featured: false,
-    number: "03",
+    number: "05",
     img: "../../public/asstes/mealifay.png",
   },
 
