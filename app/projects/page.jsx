@@ -42,7 +42,7 @@ const projects = [
   title: "Developer Portfolio",
   desc: "A modern and responsive portfolio built with Next.js, showcasing my projects, skills, and professional experience. Designed with a clean UI, smooth navigation, and optimized performance.",
   tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
-  live: "https://https://portfolio-fyos.vercel.app",
+  live: "https://portfolio-fyos.vercel.app",
   github: "https://github.com/AhmedMn3m24/Portfolio",
   featured: true,
 },
