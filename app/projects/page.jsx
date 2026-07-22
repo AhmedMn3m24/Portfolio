@@ -39,6 +39,14 @@ const projects = [
     featured: false,
   },
   {
+  title: "Developer Portfolio",
+  desc: "A modern and responsive portfolio built with Next.js, showcasing my projects, skills, and professional experience. Designed with a clean UI, smooth navigation, and optimized performance.",
+  tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
+  live: "https://your-portfolio.vercel.app",
+  github: "https://github.com/AhmedMn3m24/Portfolio",
+  featured: true,
+}
+  {
     title: "Weather App",
     desc: "A weather application showing 3-day forecasts based on user input city or geolocation. Built with JavaScript and APIs.",
     tech: ["JavaScript", "HTML", "CSS"],
