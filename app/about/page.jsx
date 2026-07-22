@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import cv from "../../public/cv.jpeg";
+import cvimg from "@/public/asstes/cv.jpeg"
 
 const bioLines = [
   "I'm Ahmed, a Frontend Developer based in Alexandria, Egypt.",
@@ -59,8 +59,13 @@ const skills = {
     "shadcn/ui",
     "HeroUI",
   ],
-  "backend.ts": ["Node.js", "MySQL", "Git & GitHub", "REST APIs"],
-};
+"backend.ts": [
+  "Node.js",
+  "Express.js",
+  "REST APIs",
+  "Folder Structure",
+  "Git & GitHub",
+],};
 
 export default function About() {
   return (
@@ -105,9 +110,9 @@ export default function About() {
 
           {/* Photo */}
           <div className="flex justify-center">
-            <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-full px-[9px] bg-gradient-to-br from-blue-500 to-blue-800 shadow-[0_0_60px_rgba(59,130,246,0.25)] transition-transform hover:scale-105 ">
+            <div className="w-60 h-60 sm:w-80 sm:h-80 rounded-full px-[9px] bg-gradient-to-br from-blue-500 to-blue-800 shadow-[0_0_60px_rgba(59,130,246,0.25)] transition-transform hover:scale-105 ">
               <Image
-                src={cv}
+                src={cvimg}
                 alt="Ahmed Abdelmonem"
                 className="w-full h-full rounded-full object-cover"
               />
@@ -117,9 +122,7 @@ export default function About() {
 
         {/* Experience — code-gutter timeline */}
         <div className="mb-24">
-          <p className="font-mono text-xs text-slate-500 mb-8">
-            <span className="text-violet-400">//</span> experience.log
-          </p>
+       
           <div className="flex flex-col">
             {experience.map((exp, i) => (
               <div

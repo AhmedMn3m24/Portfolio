@@ -77,8 +77,6 @@
 //   );
 // }
 
-
-
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -102,8 +100,8 @@ export default function Navbar() {
         <Link href="/" className="group">
           <span className="text-xl font-display font-bold tracking-tight">
             <span className="text-white/40 font-mono"></span>
-            Ahmed
-            <span className="text-white/40 font-mono">.</span>
+            Ahmed Mohamed
+            <span className="text-white/70 font-mono">.</span>
           </span>
         </Link>
 
@@ -129,8 +127,8 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`px-4 py-3 md:py-2 flex items-center gap-2 text-sm transition ${
-                  active ? "text-white" : "text-white/50 hover:text-white/80"
+                className={`px-4 py-3 md:py-2 flex items-center gap-2 text-sm transition hover:text-white hover:border-b-2 hover:border-violet-800 rounded-md ${
+                  active ? "text-white" : "text-white/50"
                 }`}
               >
                 <span

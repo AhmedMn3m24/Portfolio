@@ -30,7 +30,18 @@ const projects = [
   featured: true,
 },
 
+ 
   {
+  title: " Portfolio",
+  desc: "A modern and responsive portfolio built with Next.js, showcasing my projects, skills, and professional experience. Designed with a clean UI, smooth navigation, and optimized performance.",
+  tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
+  live: "https://portfolio-fyos.vercel.app",
+  github: "https://github.com/AhmedMn3m24/Portfolio",
+  featured: true,
+},
+
+
+ {
     title: "Todo List",
     desc: "A simple and interactive Todo List application built with Vanilla JavaScript. Add, delete, and mark tasks as completed with a clean, responsive UI. Built for practicing DOM manipulation and state handling without frameworks.",
     tech: ["JavaScript", "HTML", "Tailwind"],
@@ -38,14 +49,7 @@ const projects = [
     github: "https://github.com/AhmedMn3m24/TODOLIST",
     featured: false,
   },
-  {
-  title: "Developer Portfolio",
-  desc: "A modern and responsive portfolio built with Next.js, showcasing my projects, skills, and professional experience. Designed with a clean UI, smooth navigation, and optimized performance.",
-  tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
-  live: "https://portfolio-fyos.vercel.app",
-  github: "https://github.com/AhmedMn3m24/Portfolio",
-  featured: true,
-},
+
   {
     title: "Weather App",
     desc: "A weather application showing 3-day forecasts based on user input city or geolocation. Built with JavaScript and APIs.",
