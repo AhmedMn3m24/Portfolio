@@ -1,112 +1,156 @@
+
 "use client";
 
 import { useState } from "react";
 
-const contactLinks = [
-  {
-    label: "Email",
+const contact = {
+  email: {
     value: "aabdelmonem863@gmail.com",
     href: "mailto:aabdelmonem863@gmail.com",
   },
-  {
-    label: "GitHub",
+  github: {
     value: "github.com/AhmedMn3m24",
     href: "https://github.com/AhmedMn3m24",
   },
-  {
-    label: "LinkedIn",
+  linkedin: {
     value: "linkedin.com/in/ahmedmoneim24",
     href: "https://linkedin.com/in/ahmedmoneim24",
   },
-  { label: "Phone", value: "+20 128 666 4236", href: "tel:+201286664236" },
-];
+  phone: {
+    value: "+20 128 666 4236",
+    href: "tel:+201286664236",
+  },
+};
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
+    const subject = encodeURIComponent(
+      `Portfolio Contact from ${form.name}`
+    );
+
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
     );
 
-    window.open(`mailto:aabdelmonem863@gmail.com?subject=${subject}&body=${body}`);
+    window.open(
+      `mailto:aabdelmonem863@gmail.com?subject=${subject}&body=${body}`
+    );
 
     setSent(true);
-    setTimeout(() => setSent(false), 3000);
+
+    setTimeout(() => {
+      setSent(false);
+    }, 3000);
   };
 
   return (
-    <div className="pt-16 bg-[#0b1120] text-white min-h-screen">
-      <div className="max-w-5xl mx-auto px-6 py-16 items-center">
+    <div className="min-h-screen bg-[#0b1120] pt-16 text-white">
+      <div className="mx-auto max-w-5xl px-6 py-16">
         {/* Header */}
         <div className="mb-16 text-center">
-          <p className="text-xs uppercase tracking-widest text-green-500 mb-3">
-            Get in touch
-          </p>
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
+ 
+
+          <h1 className="font-display text-4xl font-semibold leading-tight md:text-5xl">
             Let's work <br />
-            <span className="italic text-green-500">together.</span>
+            <span className="text-amber-400">together.</span>
           </h1>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          {/* Left Side - Contact Links */}
+        <div className="grid gap-16 md:grid-cols-2">
+          {/* Contact Info */}
           <div className="flex flex-col gap-6">
-            <p className="text-gray-400 leading-relaxed">
+            <p className="leading-relaxed text-white/60">
               I'm open to freelance projects, full-time opportunities, and
               collaborations. Feel free to reach out.
             </p>
 
-            <div className="flex flex-col gap-3">
-              {contactLinks.map((link) => (
+            <div className="rounded-lg border border-white/10 bg-white/[0.03] p-5 font-mono text-sm leading-7">
+              <p className="text-white/40">{"{"}</p>
+
+              {Object.entries(contact).map(([key, { value, href }]) => (
                 <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  className="flex justify-between items-center py-3 px-4 border border-white/10 rounded-md hover:bg-white/5 hover:text-green-500 transition"
+                  key={key}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="group -mx-2 flex items-baseline gap-2 rounded px-2 pl-4 transition hover:bg-white/[0.04]"
                 >
-                  <span className="text-xs uppercase text-gray-400">{link.label}</span>
-                  <span className="text-sm">{link.value} ↗</span>
+                  <span className="text-violet-400">{key}:</span>
+
+                  <span className="text-amber-400 group-hover:underline">
+                    "{value}"
+                  </span>
+
+                  <span className="text-white/0 transition group-hover:text-white/40">
+                    ↗
+                  </span>
                 </a>
               ))}
+
+              <p className="text-white/40">{"}"}</p>
             </div>
           </div>
 
-          {/* Right Side - Contact Form */}
+          {/* Contact Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
               placeholder="Your name"
               required
               value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="p-3 border border-white/20 rounded-md bg-transparent focus:outline-none focus:border-green-500 transition"
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  name: e.target.value,
+                })
+              }
+              className="rounded-md border border-white/20 bg-transparent p-3 transition focus:border-amber-400 focus:outline-none"
             />
+
             <input
               type="email"
               placeholder="your@email.com"
               required
               value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="p-3 border border-white/20 rounded-md bg-transparent focus:outline-none focus:border-green-500 transition"
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  email: e.target.value,
+                })
+              }
+              className="rounded-md border border-white/20 bg-transparent p-3 transition focus:border-amber-400 focus:outline-none"
             />
+
             <textarea
+              rows={5}
               placeholder="Your message..."
               required
-              rows={5}
               value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="p-3 border border-white/20 rounded-md bg-transparent resize-none focus:outline-none focus:border-green-500 transition"
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  message: e.target.value,
+                })
+              }
+              className="resize-none rounded-md border border-white/20 bg-transparent p-3 transition focus:border-amber-400 focus:outline-none"
             />
 
             <button
               type="submit"
-              className={`p-3 rounded-md text-white font-medium transition ${
-                sent ? "bg-green-500" : "bg-black hover:opacity-80"
+              className={`rounded-md p-3 font-medium transition ${
+                sent
+                  ? "bg-green-500 text-white"
+                  : "bg-amber-400 text-[#0b1120] hover:bg-amber-300"
               }`}
             >
               {sent ? "✓ Opening mail..." : "Send Message →"}
@@ -115,8 +159,8 @@ export default function Contact() {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between text-sm text-gray-500 gap-3">
-          <p>📍 Alexandria, Egypt — Open to remote</p>
+        <div className="mt-20 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-sm text-white/40 md:flex-row">
+          <p>📍 Alexandria, Egypt — Open to Remote</p>
           <p>Arabic · English</p>
         </div>
       </div>

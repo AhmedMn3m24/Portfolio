@@ -11,7 +11,7 @@ export default function Page() {
           Ahmed Mohamed
         </h1>
         <span className="text-white/50 uppercase tracking-widest text-sm">
-          Junior Front-End Developer
+           Front-End Developer
         </span>
 
         <h2 className="text-2xl sm:text-3xl font-bold text-blue-500 font-syne">
