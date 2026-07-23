@@ -8,8 +8,8 @@ export default function Page() {
       <div className="flex-1 space-y-5">
 <h1 className="text-5xl md:text-6xl font-extrabold leading-tight whitespace-nowrap">
   Hi, I'm{" "}
-  <span className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
-    Ahmed <br/>   Mohamed
+  <span className="text-white">
+    Ahmed <br/> Mohamed
   </span>
 </h1>        
       
